@@ -14,7 +14,8 @@ else
 	$(error Bad location, please clone the git repo to ${ROOTDIR})
 endif
 
-setup:
+update:
+	git pull origin master
 	git submodule update --init --recursive
 
 vim: check setup
