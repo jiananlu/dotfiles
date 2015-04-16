@@ -24,6 +24,8 @@ make clean
 make
 ```
 
+You can put environment variables into `${HOME}/.my-env-vars` file, zsh will automatically source it.
+
 ### Credits
 
 Most of the stuffs are inspired by others/coworkers/etc, credit goes to them :)
