@@ -1,0 +1,5 @@
+alias rm='rm -i'
+alias psg='ps -ef | grep -i'
+alias hg='history | grep -i'
+alias la='ls -alh'
+alias grep='grep -rinI'
