@@ -15,4 +15,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
 source $ZSH/oh-my-zsh.sh
 
 # ad-hoc PATH and environment variables settings per machine
-source ${HOME}/.my-env-vars
+if [ -e ${HOME}/.my-env-vars ]; then
+    source ${HOME}/.my-env-vars
+fi

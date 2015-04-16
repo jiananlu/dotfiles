@@ -20,7 +20,7 @@ function _user_host() {
 function _git_info() {
     if git rev-parse --git-dir >/dev/null 2>&1; then
         if [[ $(git log 1>/dev/null 2>&1 | grep -c "^fatal: bad default revision") == 0 ]]; then
-            if [[ $(git status --porcelain 2>/dev/null | grep -c "^M") == 0 ]]; then
+            if [[ $(git status --porcelain 2>/dev/null | grep -c "") == 0 ]]; then
                 echo "%{$fg[green]%}$(git_prompt_info)"
                 return
             fi
@@ -31,6 +31,7 @@ function _git_info() {
             hrs=$((secs/3600))
             days=$((secs/86400))
 
+            msg=""
             if [ $days -gt 0 ]; then
                 msg="${days}d "
             fi
@@ -48,7 +49,7 @@ function _git_info() {
             elif [ $secs -gt 3600 ]; then
                 echo "%{$fg[yellow]%}$(git_prompt_info) ($msg)"
             else
-                echo "%{$fg[green]%}$(git_prompt_info) $(msg)"
+                echo "%{$fg[cyan]%}$(git_prompt_info) ($msg)"
             fi
         fi
     fi
