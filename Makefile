@@ -1,4 +1,4 @@
-ROOTDIR="${HOME}/dotfiles"
+ROOTDIR=${HOME}/dotfiles
 
 all: vim tmux zsh
 
@@ -14,16 +14,19 @@ else
 	$(error Bad location, please clone the git repo to ${ROOTDIR})
 endif
 
-vim: check
+setup:
+	git submodule update --init --recursive
+
+vim: check setup
 	@echo Setting up vim....
 	git clone https://github.com/gmarik/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 	ln -s ${ROOTDIR}/vim/.vimrc ${HOME}/.vimrc
 	@vim +PluginInstall! +qall
 
-tmux: check
+tmux: check setup
 	@echo Setting up tmux....
 	ln -s ${ROOTDIR}/tmux/.tmux.conf ${HOME}/.tmux.conf
 
-zsh: check
+zsh: check setup
 	@echo Setting up zsh....
 	ln -s ${ROOTDIR}/zsh/.zshrc ${HOME}/.zshrc
