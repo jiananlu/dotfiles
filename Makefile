@@ -9,7 +9,7 @@ clean:
 	rm -rf ${HOME}/.zshrc
 
 check:
-ifeq ("$(shell pwd)",${ROOTDIR})
+ifeq ($(shell pwd),${ROOTDIR})
 else
 	$(error Bad location, please clone the git repo to ${ROOTDIR})
 endif
