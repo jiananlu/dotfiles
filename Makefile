@@ -18,16 +18,16 @@ update:
 	git pull origin master
 	git submodule update --init --recursive
 
-vim: check setup
+vim: check update
 	@echo Setting up vim....
 	git clone https://github.com/gmarik/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 	ln -s ${ROOTDIR}/vim/.vimrc ${HOME}/.vimrc
 	@vim +PluginInstall! +qall
 
-tmux: check setup
+tmux: check update
 	@echo Setting up tmux....
 	ln -s ${ROOTDIR}/tmux/.tmux.conf ${HOME}/.tmux.conf
 
-zsh: check setup
+zsh: check update
 	@echo Setting up zsh....
 	ln -s ${ROOTDIR}/zsh/.zshrc ${HOME}/.zshrc
