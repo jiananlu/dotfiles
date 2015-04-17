@@ -1,5 +1,4 @@
-PROMPT='
-$(_user_host)[${_current_datetime}] ${_current_dir}
+PROMPT='$(_user_host)[${_current_datetime}] ${_current_dir}
 $ '
 
 RPROMPT='%{$(echotc UP 1)%}$(_git_info) $(git_prompt_status) ${_return_status}%{$(echotc DO 1)%}%{$reset_color%}'
@@ -24,6 +23,7 @@ function _git_info() {
                 echo "%{$fg[green]%}$(git_prompt_info)"
                 return
             fi
+
             last_commit=$(git log --pretty=format:'%at' -1 2>/dev/null)
             now=$(date +%s)
             secs=$((now-last_commit))
@@ -60,9 +60,9 @@ ZSH_THEME_GIT_PROMPT_PREFIX=""
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
 ZSH_THEME_GIT_PROMPT_DIRTY=" ✗"
 ZSH_THEME_GIT_PROMPT_CLEAN=" ✔"
-ZSH_THEME_GIT_PROMPT_ADDED="✚ "
-ZSH_THEME_GIT_PROMPT_MODIFIED="⚑ "
-ZSH_THEME_GIT_PROMPT_DELETED="✖ "
-ZSH_THEME_GIT_PROMPT_RENAMED="▴ "
-ZSH_THEME_GIT_PROMPT_UNMERGED="§ "
-ZSH_THEME_GIT_PROMPT_UNTRACKED="◒ "
+ZSH_THEME_GIT_PROMPT_ADDED="A "
+ZSH_THEME_GIT_PROMPT_MODIFIED="E "
+ZSH_THEME_GIT_PROMPT_DELETED="D "
+ZSH_THEME_GIT_PROMPT_RENAMED="R "
+ZSH_THEME_GIT_PROMPT_UNMERGED="M "
+ZSH_THEME_GIT_PROMPT_UNTRACKED="U "
