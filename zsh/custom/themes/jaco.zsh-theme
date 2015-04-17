@@ -20,7 +20,7 @@ function _user_host() {
 function _git_info() {
     if git rev-parse --git-dir >/dev/null 2>&1; then
         if [[ $(git log 1>/dev/null 2>&1 | grep -c "^fatal: bad default revision") == 0 ]]; then
-            if [[ $(git status --porcelain 2>/dev/null | grep -c "") == 0 ]]; then
+            if [[ $(git status --porcelain 2>/dev/null) == "" ]]; then
                 echo "%{$fg[green]%}$(git_prompt_info)"
                 return
             fi
