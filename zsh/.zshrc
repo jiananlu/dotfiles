@@ -7,7 +7,7 @@ ZSH_THEME="jaco"
 # use the custom folder under version controlled dotfiles
 ZSH_CUSTOM=${HOME}/dotfiles/zsh/custom
 
-plugins=(git git-extras brew osx encode64 mvn screen textmate urltools vagrant web-search wd personal-alias zsh-syntax-highlighting)
+plugins=(git git-extras brew osx encode64 mvn screen textmate urltools vagrant web-search wd zsh-syntax-highlighting)
 
 # A fish-like highlighter: github.com/zsh-users/zsh-syntax-highlighting
 ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets pattern cursor root line)
